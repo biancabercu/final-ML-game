@@ -1,0 +1,41 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1596917045",
+        "python_version": "3.6.9 (default, Nov  7 2019, 10:44:02) \n[GCC 8.3.0]",
+        "command_line_arguments": "/home/biancabercu/.local/bin/mlagents-learn --run-id=Shooter",
+        "mlagents_version": "0.18.1",
+        "mlagents_envs_version": "0.18.1",
+        "communication_protocol_version": "1.0.0",
+        "tensorflow_version": "1.14.0",
+        "end_time_seconds": "1596917106"
+    },
+    "total": 60.24382760000003,
+    "count": 1,
+    "self": 0.02986090000013064,
+    "children": {
+        "run_training.setup": {
+            "total": 0.11992110000005596,
+            "count": 1,
+            "self": 0.11992110000005596
+        },
+        "TrainerController.start_learning": {
+            "total": 60.094045599999845,
+            "count": 1,
+            "self": 0.0004357999998774176,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 60.09270029999993,
+                    "count": 1,
+                    "self": 60.09270029999993
+                },
+                "TrainerController._save_model": {
+                    "total": 0.0009095000000343134,
+                    "count": 1,
+                    "self": 0.0009095000000343134
+                }
+            }
+        }
+    }
+}
