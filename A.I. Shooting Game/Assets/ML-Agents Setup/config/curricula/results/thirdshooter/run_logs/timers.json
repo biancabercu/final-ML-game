@@ -1,0 +1,41 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1598181236",
+        "python_version": "3.6.9 (default, Jul 17 2020, 12:50:27) \n[GCC 8.4.0]",
+        "command_line_arguments": "/home/diana/.local/bin/mlagents-learn --run-id=thirdshooter",
+        "mlagents_version": "0.18.1",
+        "mlagents_envs_version": "0.18.1",
+        "communication_protocol_version": "1.0.0",
+        "tensorflow_version": "1.14.0",
+        "end_time_seconds": "1598181296"
+    },
+    "total": 60.13289279999981,
+    "count": 1,
+    "self": 0.028361099999983708,
+    "children": {
+        "run_training.setup": {
+            "total": 0.0801925000000665,
+            "count": 1,
+            "self": 0.0801925000000665
+        },
+        "TrainerController.start_learning": {
+            "total": 60.02433919999976,
+            "count": 1,
+            "self": 0.0007064999995236576,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 60.02236790000006,
+                    "count": 1,
+                    "self": 60.02236790000006
+                },
+                "TrainerController._save_model": {
+                    "total": 0.0012648000001718174,
+                    "count": 1,
+                    "self": 0.0012648000001718174
+                }
+            }
+        }
+    }
+}
