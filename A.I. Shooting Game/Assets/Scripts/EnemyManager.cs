@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.MLAgents;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class EnemyManager : MonoBehaviour
@@ -14,6 +15,11 @@ public class EnemyManager : MonoBehaviour
     private int EnemyCount;
     private EnvironmentParameters EnvironmentParameters;
     private int startingPoint = 0;
+    public int score;
+        public Text scoreText;
+    public int score_time=0;
+    private int score_count=0;
+private int score_count2=0,rest=0;
 
     private void Start()
     {
@@ -21,6 +27,28 @@ public class EnemyManager : MonoBehaviour
         EnemyCount = Mathf.FloorToInt(EnvironmentParameters.GetWithDefault("amountZombies", 4f));
         
         SetEnemiesActive();
+        score=0;
+        score_time=0;
+    }
+
+    public void Update()
+    {
+        //matematica asta este aici ca sa imi demonstreze
+        //ca este inca vara
+        score_time++;
+        if(score_time>60){
+            score_count=score_time/60;
+            if(score_count>60) {
+                score_count2=score_count/60;
+                rest=score_count%60;
+                 scoreText.text=score_count2.ToString()+" m "+rest+" s";
+            }else{
+                scoreText.text=score_count.ToString()+" s";
+            }
+        }else {
+            scoreText.text=score_time.ToString()+" ms";
+        }
+       
     }
 
     public bool isEveryEnemyDead()
@@ -29,8 +57,9 @@ public class EnemyManager : MonoBehaviour
         
         for (int i = startingPoint; i < EnemyCount + startingPoint; i++)
         {
-            if (!enemies[i].isActiveAndEnabled)
+            if (!enemies[i].isActiveAndEnabled) {
                 deathCounter++;
+                score++; }
         }
 
         return deathCounter >= EnemyCount;
